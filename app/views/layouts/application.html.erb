@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FibroblastExerise</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "danger" %>
+  <% end %>
+<% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

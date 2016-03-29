@@ -1,0 +1,25 @@
+<div><h1>This is our main login page</h1></div>
+<h3>To see your contacts, you must first log in</h3>
+<div class="alert">
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
+  <% end %>
+<% end %>
+</div>
+
+
+<div class= "box-login">
+  <%= form_tag login_path  do %>
+  <div class="label-login"><%= label_tag(:username)%></div>
+  <div class="text-login"><%= text_field_tag(:username, params[:user], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
+  <div class="label-login"><%= label_tag(:password)%></div>
+  <div class="text-login"><%= password_field_tag(:password, nil,  class: 'input-large-login', )%></div>
+</div>
+  <div class="login-login"><%= submit_tag("Log In", class: "btn btn-primary-login") %></div>
+  <% end %>
+<footer>
+  <span id ="signup-login"><%= link_to "Sign Up", new_user_path %></span>
+</footer>

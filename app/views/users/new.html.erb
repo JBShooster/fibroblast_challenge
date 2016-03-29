@@ -1,0 +1,39 @@
+<% provide(:title, 'New User Sign up') %>
+
+<div class="alert">
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
+  <% end %>
+<% end %>
+</div>
+
+<h1>New User Sign up</h1>
+
+<div class="box-login">
+    <%= form_for(@user) do |f| %>
+      <div class="label-login"><%= label_tag(:username)%></div>
+      <div class="text-login"><%= text_field_tag(:username, params[:user], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
+
+      <div class="label-login"><%= label_tag(:email)%></div>
+      <div class="text-login"><%= email_field_tag(:email, nil,  class: 'input-large-login', )%></div>
+
+      <div class="label-login"><%= label_tag(:first_name)%></div>
+      <div class="text-login"><%= text_field_tag(:first_name, nil,  class: 'input-large-login', )%></div>
+
+      <div class="label-login"><%= label_tag(:last_name)%></div>
+      <div class="text-login"><%= text_field_tag(:last_name, nil,  class: 'input-large-login', )%></div>
+
+      <div class="label-login"><%= label_tag(:password)%></div>
+      <div class="text-login"><%= password_field_tag(:password, nil,  class: 'input-large-login', )%></div>
+      <div class="label-login"><%= label_tag(:password_confirmation)%></div>
+      <div class="text-login"><%= password_field_tag(:password_confirmation, nil,  class: 'input-large-login', )%></div>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Back', users_path %>

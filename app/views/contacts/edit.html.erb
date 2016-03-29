@@ -1,0 +1,59 @@
+<div class="pagehead"><h1>Edit Contact's Info</h1></div>
+<% if @contact.errors.any? %>
+  <% @contact.errors.full_messages.each do |error|%>
+  <p class="warning"> <%= error %> </p>
+  <% end %>
+<% end %>
+
+
+<%= form_for(@contact) do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address1 %><br>
+    <%= f.text_field :address1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address2 %><br>
+    <%= f.text_field :address2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<br>
+
+<%= link_to 'Show', @contact %> |
+<%= link_to 'Back', contacts_path %>
+<%= link_to "Logout", logout_path, method: :post %>
