@@ -1,28 +1,13 @@
-== README
+== Fibroblast Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* I chose Rails because the framework is well-tailored to what we are trying to accomplish with MVC setup
 
-Things you may want to cover:
+* To see the various Models, Views, and Controllers, go to the App foler.
 
-* Ruby version
+* Config is where you will find the Routes file
 
-* System dependencies
+* Db is where you will find the Schema file that outlines our database
 
-* Configuration
+* After cloning/pulling, run 'rake db:create' and 'rake db:seed' in order to create a database which will have one User and one Contact.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Views/Contacts/index.html.erb is where we render the contacts for the User. On the controller we set @Contacts to the contacts that have the user_id of the user who is signed in.
